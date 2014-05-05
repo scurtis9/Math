@@ -38,7 +38,7 @@ knitr::opts_chunk$set(comment=NA, tidy=F, message=F)
 
 ## FA vs. PCA: Conceptually
 
-<img src="/assets/img/FAPCA.jpeg" height="550" />
+!['FA']("/Math/assets/img/FAPCA.jpeg")
 
 ---
 
