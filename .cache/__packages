@@ -1,0 +1,13 @@
+base
+datasets
+devtools
+GPArotation
+graphics
+grDevices
+MASS
+methods
+psych
+slidify
+slidifyLibraries
+stats
+utils
