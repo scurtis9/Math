@@ -37,7 +37,7 @@ FA and PCA (principal components analysis) are methods of data reduction
 
 ## FA vs. PCA: Conceptually
 
-<iframe src ='assets/img/FAPCA.jpeg' height=550px></iframe>
+<iframe src ='assets/img/FAPCA.png' height=550px></iframe>
 
 ---
 
