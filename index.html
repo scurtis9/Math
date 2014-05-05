@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Factor Analysis</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Factor Analysis">
+  <meta name="author" content="Shane Curtis">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Factor Analysis</h1>
+    <h2></h2>
+    <p>Shane Curtis<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What is Factor Analysis?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>FA and PCA (principal components analysis) are methods of data reduction</p>
+
+<ul class = "build incremental">
+<li>Take many variables and explain them with a few “factors” or “components”</li>
+<li>Correlated variables are grouped together and separated from other variables with low or no correlation</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>What is FA?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Patterns of correlations are identified and either used as descriptives (PCA) or as indicative of underlying theory (FA)</li>
+<li>Process of providing an operational definition for latent construct (through regression equation)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>FA vs. PCA: Conceptually</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>FA produces factors; PCA produces components</li>
+<li>Factors cause variables; components are aggregates of the variables</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>FA vs. PCA: Conceptually</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="/home/shane/FactorAnalysis/assets/img/FAPCA.jpeg" height="550" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>FA vs. PCA: Conceptually</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>FA analyzes only the variance shared among the variables (common variance without error or unique variance); PCA analyzes all of the variance</li>
+<li>FA: “What are the underlying processes that could produce these correlations?”; PCA: Just summarize empirical associations, very data driven</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>General Steps to FA</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Selecting and Measuring a set of variables in a given domain</li>
+<li>Data screening in order to prepare the correlation matrix</li>
+<li>Factor Extraction</li>
+<li>Factor Rotation to increase interpretability </li>
+<li>Interpretation</li>
+<li>Validation and Reliability of the measures</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>What makes a &quot;good factor&quot;?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Makes sense</li>
+<li>Easy to interpret</li>
+<li>Simple structure</li>
+<li>Lack of cross-loadings</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Problems with FA</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Unlike many of the analyses so far there is no statistical criterion to compare the linear combination to</li>
+<li>It has been consided more art than science
+
+<ul>
+<li>There are a number of extraction methods</li>
+<li>There are a number of rotation methods: Orthogonal vs. Oblique</li>
+<li>Number of factors to extract</li>
+<li>Communality estimates</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Types of FA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Exploratory FA</p>
+
+<ul class = "build incremental">
+<li>Summarizing data by grouping correlated variables</li>
+<li>Investigating sets of measured variables related to theoretical constructs</li>
+<li>Usually done near the onset of research</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Types of FA</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Confirmatory</p>
+
+<ul class = "build incremental">
+<li>More advanced technique</li>
+<li>When factor structure is known or at least theorized</li>
+<li>Testing generalization of factor structure to new data, etc.</li>
+<li>This is tested through SEM methods</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Terminology</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Observed correlation matrix</li>
+<li>Reproduced correlation matrix</li>
+<li>Residual correlation matrix</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Terminology</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Orthogonal Rotation</p>
+
+<ul>
+<li>Loading Matrix: correlation between each variable and the factor</li>
+</ul>
+
+<p>Oblique Rotation</p>
+
+<ul>
+<li>Factor Correlation Matrix: correlation between the factors</li>
+<li>Structure Matrix: correlation between factors and variables</li>
+<li>Pattern Matrix: unique relationship between each factor and variable uncontaminated by overlap between the factors</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Terminology</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Factor Coefficient Matrix: coefficients used to calculate factor scores</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="wrappre centrepre smaller" id="slide-14" style="background:;">
+  <article data-timings="">
+    <pre><code>Factor Analysis using method =  pa
+Call: fa(r = corMat, nfactors = 2, rotate = &quot;oblimin&quot;, fm = &quot;pa&quot;)
+Standardized loadings (pattern matrix) based upon correlation matrix
+       PA1   PA2   h2    u2 com
+BIO   0.86  0.02 0.75 0.255 1.0
+GEO   0.78  0.05 0.63 0.369 1.0
+CHEM  0.87 -0.05 0.75 0.253 1.0
+ALG  -0.04  0.81 0.65 0.354 1.0
+CALC  0.01  0.96 0.92 0.081 1.0
+STAT  0.13  0.50 0.29 0.709 1.1
+
+                       PA1  PA2
+SS loadings           2.14 1.84
+Proportion Var        0.36 0.31
+Cumulative Var        0.36 0.66
+Proportion Explained  0.54 0.46
+Cumulative Proportion 0.54 1.00
+
+ With factor correlations of 
+     PA1  PA2
+PA1 1.00 0.21
+PA2 0.21 1.00
+
+Mean item complexity =  1
+Test of the hypothesis that 2 factors are sufficient.
+
+The degrees of freedom for the null model are  15  and the objective function was  2.87
+The degrees of freedom for the model are 4  and the objective function was  0.01 
+
+The root mean square of the residuals (RMSR) is  0.01 
+The df corrected root mean square of the residuals is  0.02 
+
+Fit based upon off diagonal values = 1
+Measures of factor score adequacy             
+                                                PA1  PA2
+Correlation of scores with factors             0.94 0.96
+Multiple R square of scores with factors       0.88 0.93
+Minimum correlation of possible factor scores  0.77 0.86
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What is Factor Analysis?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='What is FA?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='FA vs. PCA: Conceptually'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='FA vs. PCA: Conceptually'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='FA vs. PCA: Conceptually'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='General Steps to FA'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='What makes a &quot;good factor&quot;?'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Problems with FA'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Types of FA'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Types of FA'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Terminology'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Terminology'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Terminology'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title=''>
+         14
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
